@@ -1,4 +1,3 @@
 /ngrok
-/tls/*
-!/tls/.keep
+/tls
 /scripts/run.sh
