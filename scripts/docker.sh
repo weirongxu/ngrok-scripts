@@ -10,4 +10,4 @@ if docker ps -a -q -f="name=ngrokd"; then
     sequenceiq/ngrokd -domain=$NGROK_DOMAIN -tlsCrt "/tls/server.crt" -tlsKey "/tls/server.key"
 fi
 
-. scripts/echo_ngrok_config.sh
+. scripts/echo_nginx_config.sh

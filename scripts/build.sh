@@ -28,7 +28,7 @@ echo "$(make release-all)"
 
 cd ..
 
-. scripts/echo_ngrok_config.sh
+. scripts/echo_nginx_config.sh
 
 cat > scripts/run.sh <<-EOF
 $(pwd)/ngrok/bin/ngrokd -domain="$NGROK_DOMAIN" -httpAddr=":$NGROK_HTTP_PORT" -srcHttpAddr=":80" -httpsAddr=":$NGROK_HTTPS_PORT" -srcHttpsAddr=":433"
