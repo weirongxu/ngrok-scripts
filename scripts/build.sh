@@ -12,6 +12,7 @@ copy_tls() {
 
 if [ ! -d ngrok ]; then
   git clone https://github.com/weirongxu/ngrok.git --depth 1
+  sed -i "" "s/ngrokd\\.ngrok\\.com:443/$NGROK_DOMAIN:4443/g" ngrok/src/ngrok/client/model.go
 fi
 
 if [ ! -d ngrok ]; then
