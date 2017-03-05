@@ -32,8 +32,8 @@ server {
     proxy_set_header Host \$http_host;
     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
   }
-  ssl_certificate $(pwd)/tls/server.crt;
-  ssl_certificate_key $(pwd)/tls/server.key;
+  ssl_certificate $(pwd)/cache/tls/server.crt;
+  ssl_certificate_key $(pwd)/cache/tls/server.key;
   access_log off;
   log_not_found off;
 }
@@ -48,8 +48,8 @@ server {
     proxy_set_header Host \$http_host;
     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
   }
-  ssl_certificate $(pwd)/tls/subdomain-server.crt;
-  ssl_certificate_key $(pwd)/tls/subdomain-server.key;
+  ssl_certificate $(pwd)/cache/tls/subdomain-server.crt;
+  ssl_certificate_key $(pwd)/cache/tls/subdomain-server.key;
   access_log off;
   log_not_found off;
 }

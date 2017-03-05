@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 copy_tls() {
   echo 'Copy tls...'
-  cp tls/rootCA.crt ngrok/assets/client/tls/ngrokroot.crt
-  cp tls/server.crt ngrok/assets/server/tls/snakeoil.crt
-  cp tls/server.key ngrok/assets/server/tls/snakeoil.key
+  cp cache/tls/rootCA.crt ngrok/assets/client/tls/ngrokroot.crt
+  cp cache/tls/server.crt ngrok/assets/server/tls/snakeoil.crt
+  cp cache/tls/server.key ngrok/assets/server/tls/snakeoil.key
 }
 
 . scripts/get_domain.sh

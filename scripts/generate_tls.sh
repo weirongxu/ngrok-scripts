@@ -2,11 +2,12 @@
 . scripts/common.sh
 . scripts/get_domain.sh
 
-test ! -d tls && mkdir tls
+test ! -d cache && mkdir cache
+test ! -d cache/tls && mkdir cache/tls
 
-cd tls
+cd cache/tls
 
-echo 'Create tls...'
+echo 'Create cache/tls...'
 
 if [ ! -f rootCA.key ]; then
   success 'create rootCA.key'
@@ -64,4 +65,4 @@ else
   error 'exists subdomain-server.crt'
 fi
 
-cd ..
+cd ../..

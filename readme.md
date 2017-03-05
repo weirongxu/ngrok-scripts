@@ -48,4 +48,4 @@ make new-tls
 
 ## Using existing `rootCA.key` and `server.key`
 
-copy `rootCA.key` `server.key` to tls directory and executing above commands
+copy `rootCA.key` `server.key` to cache/tls directory and executing above commands
