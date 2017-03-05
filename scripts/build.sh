@@ -12,7 +12,6 @@ copy_tls() {
 
 if [ ! -d ngrok ]; then
   git clone https://github.com/weirongxu/ngrok.git --depth 1
-  sed -i "" "s/ngrokd\\.ngrok\\.com:443/$NGROK_DOMAIN:4443/g" ngrok/src/ngrok/client/model.go
 fi
 
 if [ ! -d ngrok ]; then
@@ -24,7 +23,14 @@ copy_tls
 
 cd ngrok
 
+domain_srt=src/ngrok/client/model.go
+
+sed -i ".bak" "s/ngrokd\\.ngrok\\.com:443/$NGROK_DOMAIN:4443/g" ${domain_srt}
+
 echo "$(make release-all)"
+
+rm ${domain_srt}
+mv ${domain_srt}.bak ${domain_srt}
 
 cd ..
 
