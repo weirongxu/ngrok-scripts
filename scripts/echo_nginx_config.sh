@@ -13,7 +13,7 @@ server {
   listen [::]:80;
   server_name *.$NGROK_DOMAIN, $NGROK_DOMAIN;
   location / {
-    proxy_pass http://127.0.0.1:$NGROK_HTTPS_PORT;
+    proxy_pass http://127.0.0.1:$NGROK_HTTP_PORT;
     proxy_set_header X-Real-IP \$remote_addr;
     proxy_set_header Host \$http_host;
     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -27,7 +27,7 @@ server {
   listen [::]:443 ssl;
   server_name $NGROK_DOMAIN;
   location / {
-    proxy_pass http://127.0.0.1:$NGROK_HTTP_PORT;
+    proxy_pass http://127.0.0.1:$NGROK_HTTPS_PORT;
     proxy_set_header X-Real-IP \$remote_addr;
     proxy_set_header Host \$http_host;
     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
