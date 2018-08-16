@@ -25,7 +25,9 @@ cd ngrok
 
 domain_srt=src/ngrok/client/model.go
 
-sed -i".bak" -e "s/ngrokd\\.ngrok\\.com:443/$NGROK_DOMAIN:4443/g" ${domain_srt}
+cp ${domain_srt} ${domain_srt}.bak
+
+sed -e "s/ngrokd\\.ngrok\\.com:443/$NGROK_DOMAIN:4443/g" ${domain_srt}.bak > ${domain_srt}
 
 echo "$(make release-all)"
 
